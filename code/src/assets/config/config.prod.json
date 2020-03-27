@@ -1,0 +1,9 @@
+{
+    "env" :{
+        "name": "#{envName}"
+    },
+    "api" : {
+        "ams": "http://api.meex.tech/ams"
+    }
+}
+
