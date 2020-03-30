@@ -8,11 +8,11 @@ export class UserService {
     constructor(private http: HttpClient) { }
 
     getAll() {
-        return this.http.get<User[]>(`${AppConfig.settings.apiUrl.ams}/users`);
+        return this.http.get<User[]>(`${AppConfig.settings.api.ams}/users`);
     }
 
     getById(id: number) {
-        return this.http.get<User>(`${AppConfig.settings.apiUrl.ams}/users/${id}`);
+        return this.http.get<User>(`${AppConfig.settings.api.ams}/users/${id}`);
     }
 
 }

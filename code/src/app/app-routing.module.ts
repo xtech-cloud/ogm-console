@@ -16,6 +16,14 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: '/dashboard/dashboard1', pathMatch: 'full' },
       {
+        path: 'bla',
+        loadChildren: './_bla/bla.module#BLAModule'
+      },
+      {
+        path: 'src',
+        loadChildren: './_src/src.module#SRCModule'
+      },
+      {
         path: 'dashboard',
         loadChildren: './dashboards/dashboard.module#DashboardModule'
       },

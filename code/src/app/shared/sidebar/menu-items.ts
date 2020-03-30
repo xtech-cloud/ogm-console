@@ -1,6 +1,140 @@
 import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
+  {
+    path: '',
+    title: 'Business Logic Agent',
+    icon: '',
+    class: 'nav-small-cap',
+    label: '',
+    labelClass: '',
+    extralink: true,
+    submenu: []
+  },
+  {
+    path: '',
+    title: 'Micro Lesson Builder',
+    icon: 'mdi mdi-google-nearby',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/bla/mlb/queue',
+        title: 'Queue',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/bla/mlb/history',
+        title: 'History',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
+  {
+    path: '',
+    title: 'Micro Service Agent',
+    icon: '',
+    class: 'nav-small-cap',
+    label: '',
+    labelClass: '',
+    extralink: true,
+    submenu: []
+  },
+  {
+    path: '',
+    title: 'Video',
+    icon: 'mdi mdi-camcorder-box',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/msa/video/build',
+        title: 'Build',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/video/queue',
+        title: 'Queue',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/video/history',
+        title: 'History',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
+  {
+    path: '',
+    title: 'Service Registry Center',
+    icon: '',
+    class: 'nav-small-cap',
+    label: '',
+    labelClass: '',
+    extralink: true,
+    submenu: []
+  },
+  {
+    path: '',
+    title: 'NC',
+    icon: 'mdi mdi-hexagon-multiple',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/src/nc/consul',
+        title: 'Consul',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
+
+  {
+    path: '',
+    title: 'Foundation Service',
+    icon: '',
+    class: 'nav-small-cap',
+    label: '',
+    labelClass: '',
+    extralink: true,
+    submenu: []
+  }
 ]
 
 export const TEMPLATE_ROUTES: RouteInfo[] = [

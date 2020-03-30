@@ -3,7 +3,13 @@
         "name": "#{envName}"
     },
     "api" : {
-        "ams": "http://api.meex.tech/ams"
+        "ams": "http://api.meex.tech/ams",
+        "bla": {
+            "mlb": "http://localhost:8080/bla/mlb"
+        }
+    },
+    "web" : {
+        "consul": "http://localhost:8500"
     }
 }
 

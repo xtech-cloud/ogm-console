@@ -38,7 +38,7 @@ export class SidebarComponent implements OnInit {
   // End open close
   ngOnInit() {
       let routes = ROUTES;
-      if (!environment.pord) {
+      if (!environment.production) {
           routes = ROUTES.concat(TEMPLATE_ROUTES)
       }
     this.sidebarnavItems = routes.filter(sidebarnavItem => sidebarnavItem);
