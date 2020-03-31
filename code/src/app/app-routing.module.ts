@@ -64,9 +64,9 @@ export const routes: Routes = [
     component: BlankComponent,
     children: [
       {
-        path: 'authentication',
+        path: 'auth',
         loadChildren:
-          './authentication/authentication.module#AuthenticationModule'
+          './_auth/auth.module#AuthModule'
       }
     ]
   },

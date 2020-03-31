@@ -19,7 +19,7 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
 
-    login(username: string, password: string) {
+    signin(username: string, password: string) {
         return this.http.post<any>(`${AppConfig.settings.api.ams}/signin`, { username, password })
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
@@ -32,7 +32,7 @@ export class AuthenticationService {
             }));
     }
 
-    logout() {
+    signout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);

@@ -5,11 +5,11 @@ import { first } from 'rxjs/operators'
 import { AuthenticationService } from '../../_services/authentication.service'
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login2.component.html',
-  styleUrls: ['./login2.component.css'],
+  selector: 'app-signin',
+  templateUrl: './signin.component.html',
+  styleUrls: ['./signin.component.css'],
 })
-export class Login2Component implements OnInit, AfterViewInit {
+export class SigninComponent implements OnInit, AfterViewInit {
     loading = false;
     submitted = false;
     returnUrl: string;
@@ -47,14 +47,14 @@ export class Login2Component implements OnInit, AfterViewInit {
   get f() {return this.signinForm.controls; }
 
   onSubmit() {
-      console.log("submit signin")
+      this.error = '';
+      this.submitted = true;
       if(this.signinForm.invalid) {
           return;
       }
 
-      this.submitted = true;
       this.loading = true;
-      this.authenticationService.login(this.f.username.value, this.f.password.value)
+      this.authenticationService.signin(this.f.username.value, this.f.password.value)
         .pipe(first())
         .subscribe(
             data => {
