@@ -10,7 +10,7 @@ export const SRCRoutes: Routes = [
         path: 'nc/consul',
         component: ConsulComponent,
         data: {
-          title: 'NC',
+          title: 'Consul',
           urls: [
             { title: 'NC', url: '/nc' },
             { title: 'Consul' }

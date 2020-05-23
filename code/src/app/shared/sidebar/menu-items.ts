@@ -96,7 +96,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '',
     title: 'License',
-    icon: 'mdi mdi-crown',
+    icon: 'mdi mdi-key-variant',
     class: 'has-arrow',
     label: '',
     labelClass: 'label label-rouded label-themecolor',
@@ -175,7 +175,28 @@ export const ROUTES: RouteInfo[] = [
     labelClass: '',
     extralink: true,
     submenu: []
-  }
+  },
+  {
+    path: '',
+    title: 'Micro',
+    icon: 'mdi mdi-maxcdn',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/foundation/micro/web',
+        title: 'Web',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
 ]
 
 export const TEMPLATE_ROUTES: RouteInfo[] = [

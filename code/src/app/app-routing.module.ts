@@ -28,6 +28,10 @@ export const routes: Routes = [
         loadChildren: './_src/src.module#SRCModule'
       },
       {
+        path: 'foundation',
+        loadChildren: './_foundation/foundation.module#FoundationModule'
+      },
+      {
         path: 'dashboard',
         loadChildren: './dashboards/dashboard.module#DashboardModule'
       },
