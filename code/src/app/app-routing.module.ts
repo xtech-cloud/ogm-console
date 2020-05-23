@@ -20,6 +20,10 @@ export const routes: Routes = [
         loadChildren: './_bla/bla.module#BLAModule'
       },
       {
+        path: 'msa',
+        loadChildren: './_msa/msa.module#MSAModule'
+      },
+      {
         path: 'src',
         loadChildren: './_src/src.module#SRCModule'
       },

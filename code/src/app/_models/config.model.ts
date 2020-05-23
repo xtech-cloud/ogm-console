@@ -5,6 +5,9 @@ export interface IAppConfig {
         bla : {
             mlb: string;
         };
+        msa: {
+            license: string;
+        }
     };
     web: {
         consul: string;

@@ -6,6 +6,9 @@
         "ams": "http://api.meex.tech/ams",
         "bla": {
             "mlb": "http://localhost:8080/bla/mlb"
+        },
+        "msa": {
+            "license": "http://localhost:8080/msa/license"
         }
     },
     "web" : {

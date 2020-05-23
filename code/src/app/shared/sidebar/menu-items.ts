@@ -95,6 +95,47 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '',
+    title: 'License',
+    icon: 'mdi mdi-crown',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/msa/license/space',
+        title: 'Space',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/license/key',
+        title: 'Key',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/license/certificate',
+        title: 'Certificate',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
+  {
+    path: '',
     title: 'Service Registry Center',
     icon: '',
     class: 'nav-small-cap',
