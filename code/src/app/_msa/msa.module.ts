@@ -8,10 +8,16 @@ import { ChartistModule } from 'ng-chartist';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { MSARoutes } from './msa.routing';
 
+import { LicenseDashboardComponent } from './license/dashboard.component';
 import { LicenseSpaceComponent } from './license/space.component';
 import { LicenseKeyComponent } from './license/key.component';
 import { LicenseCertificateComponent } from './license/certificate.component';
 import { LicenseService } from './service/license.service';
+import { AccountDashboardComponent } from './account/dashboard.component';
+import { AnalyticsAgentComponent } from './analytics/agent.component';
+import { AnalyticsService } from './service/analytics.service';
+import { AccountRetrievalComponent } from './account/retrieval.component';
+import { AccountService } from './service/account.service';
 
 @NgModule({
   imports: [
@@ -24,12 +30,18 @@ import { LicenseService } from './service/license.service';
     RouterModule.forChild(MSARoutes)
   ],
   declarations: [
+    LicenseDashboardComponent,
     LicenseSpaceComponent,
     LicenseKeyComponent,
     LicenseCertificateComponent,
+    AnalyticsAgentComponent,
+    AccountDashboardComponent,
+    AccountRetrievalComponent,
   ],
   providers:[
     LicenseService,
+    AnalyticsService,
+    AccountService,
   ]
 })
 export class MSAModule {}

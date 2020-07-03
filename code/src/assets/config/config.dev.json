@@ -8,7 +8,9 @@
             "mlb": "http://localhost:8080/bla/mlb"
         },
         "msa": {
-            "license": "http://localhost:8080/msa/license"
+            "account": "http://localhost:8080/msa/account",
+            "license": "http://localhost:8080/msa/license",
+            "analytics": "http://localhost:8080/msa/analytics"
         }
     },
     "web" : {

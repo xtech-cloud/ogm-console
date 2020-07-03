@@ -54,6 +54,109 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '',
+    title: 'Account',
+    icon: 'mdi mdi-account',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/msa/account/dashboard',
+        title: 'Dashboard',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/account/retrieval',
+        title: 'Retrieval',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+    ]
+  },
+  {
+    path: '',
+    title: 'License',
+    icon: 'mdi mdi-key-variant',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/msa/license/dashboard',
+        title: 'Dashboard',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/license/space',
+        title: 'Space',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/license/key',
+        title: 'Key',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/license/certificate',
+        title: 'Certificate',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
+  {
+    path: '',
+    title: 'Analytics',
+    icon: 'mdi mdi-chart-areaspline',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/msa/analytics/agent',
+        title: 'Agent',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+    ]
+  },
+  {
+    path: '',
     title: 'Video',
     icon: 'mdi mdi-camcorder-box',
     class: 'has-arrow',
@@ -93,47 +196,8 @@ export const ROUTES: RouteInfo[] = [
       }
     ]
   },
-  {
-    path: '',
-    title: 'License',
-    icon: 'mdi mdi-key-variant',
-    class: 'has-arrow',
-    label: '',
-    labelClass: 'label label-rouded label-themecolor',
-    extralink: false,
-    submenu: [
-      {
-        path: '/msa/license/space',
-        title: 'Space',
-        icon: '',
-        class: '',
-        label: '',
-        labelClass: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/msa/license/key',
-        title: 'Key',
-        icon: '',
-        class: '',
-        label: '',
-        labelClass: '',
-        extralink: false,
-        submenu: []
-      },
-      {
-        path: '/msa/license/certificate',
-        title: 'Certificate',
-        icon: '',
-        class: '',
-        label: '',
-        labelClass: '',
-        extralink: false,
-        submenu: []
-      }
-    ]
-  },
+
+
   {
     path: '',
     title: 'Service Registry Center',

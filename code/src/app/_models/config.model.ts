@@ -6,7 +6,9 @@ export interface IAppConfig {
             mlb: string;
         };
         msa: {
+            account: string;
             license: string;
+            analytics: string;
         }
     };
     web: {
