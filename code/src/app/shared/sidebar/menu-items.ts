@@ -72,8 +72,28 @@ export const ROUTES: RouteInfo[] = [
         submenu: []
       },
       {
+        path: '/msa/account/create',
+        title: 'Create',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
         path: '/msa/account/retrieval',
         title: 'Retrieval',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/account/update',
+        title: 'Update',
         icon: '',
         class: '',
         label: '',

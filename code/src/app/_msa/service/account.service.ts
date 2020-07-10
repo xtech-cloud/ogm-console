@@ -29,11 +29,34 @@ export class AccountService {
       });
   }
 
-  list(_offset, _count, _onReply) {
+  queryList(_offset, _count, _onReply) {
       this.http.get(`${AppConfig.settings.api.msa.account}/Query/List?offset=${_offset}&count=${_count}`).subscribe( (rsp) => {
           let status = this.handleReply(rsp);
           let total = null == rsp['total'] ? 0 : rsp['total'];
           _onReply(status, rsp['account'], total);
+      });
+  }
+
+  querySingle(_field, _value, _onReply) {
+      this.http.get(`${AppConfig.settings.api.msa.account}/Query/Single?field=${_field}&value="${_value}"`).subscribe( (rsp) => {
+          let status = this.handleReply(rsp);
+          _onReply(status, rsp['account']);
+      });
+  }
+
+  updateProfile(_accessToken, _profile, _onReply) {
+      // strategy为空时，accessToken为uuid
+      this.http.get(`${AppConfig.settings.api.msa.account}/Profile/Update?accessToken=${_accessToken}&profile="${_profile}"`).subscribe( (rsp) => {
+          let status = this.handleReply(rsp);
+          _onReply(status);
+      });
+  }
+
+  resetPassword(_accessToken, _password, _onReply) {
+      // strategy为空时，accessToken为uuid
+      this.http.get(`${AppConfig.settings.api.msa.account}/Auth/ResetPasswd?accessToken=${_accessToken}&password="${_password}"`).subscribe( (rsp) => {
+          let status = this.handleReply(rsp);
+          _onReply(status);
       });
   }
 }

@@ -17,6 +17,8 @@ import { AccountDashboardComponent } from './account/dashboard.component';
 import { AnalyticsAgentComponent } from './analytics/agent.component';
 import { AnalyticsService } from './service/analytics.service';
 import { AccountRetrievalComponent } from './account/retrieval.component';
+import { AccountUpdateComponent } from './account/update.component';
+import { AccountCreateComponent } from './account/create.component';
 import { AccountService } from './service/account.service';
 
 @NgModule({
@@ -37,6 +39,8 @@ import { AccountService } from './service/account.service';
     AnalyticsAgentComponent,
     AccountDashboardComponent,
     AccountRetrievalComponent,
+    AccountUpdateComponent,
+    AccountCreateComponent,
   ],
   providers:[
     LicenseService,

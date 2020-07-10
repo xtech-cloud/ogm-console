@@ -6,6 +6,8 @@ import { LicenseKeyComponent } from './license/key.component';
 import { LicenseCertificateComponent } from './license/certificate.component';
 import { AnalyticsAgentComponent } from './analytics/agent.component';
 import { AccountRetrievalComponent } from './account/retrieval.component';
+import { AccountUpdateComponent } from './account/update.component';
+import { AccountCreateComponent } from './account/create.component';
 import { AccountDashboardComponent } from './account/dashboard.component';
 
 export const MSARoutes: Routes = [
@@ -31,6 +33,28 @@ export const MSARoutes: Routes = [
           urls: [
             { title: 'Account', url: '/account' },
             { title: 'Retrieval' }
+          ]
+        }
+      },
+      {
+        path: 'account/update',
+        component: AccountUpdateComponent,
+        data: {
+          title: 'Update',
+          urls: [
+            { title: 'Account', url: '/account' },
+            { title: 'Update' }
+          ]
+        }
+      },
+      {
+        path: 'account/create',
+        component: AccountCreateComponent,
+        data: {
+          title: 'Create',
+          urls: [
+            { title: 'Account', url: '/account' },
+            { title: 'Create' }
           ]
         }
       },

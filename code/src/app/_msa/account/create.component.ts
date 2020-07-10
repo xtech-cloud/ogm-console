@@ -3,9 +3,7 @@ import { NgbDateStruct, NgbCalendar, NgbDateAdapter, NgbDateNativeAdapter, NgbDa
 import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-import { LocalDataSource } from 'ng2-smart-table';
 import { subMonths, format } from 'date-fns';
-import * as tableData from './retrieval.data';
 import { AccountService } from '../service/account.service';
 
 export const Style:string =`
@@ -38,60 +36,35 @@ export const Style:string =`
 `
 
 @Component({
-  templateUrl: './retrieval.component.html',
+  templateUrl: './create.component.html',
   providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }],
   styles: [
     Style
   ]
 })
-export class AccountRetrievalComponent implements OnInit{
-  search = { offset: 0, count: 50, total:0};
-  settings = tableData.settings; 
-  source: LocalDataSource;
+export class AccountCreateComponent implements OnInit{
   private _success = new Subject<string>();
-  private _modal = new Subject<string>();
   successMessage:string = '';
-  modalMessage:string = '';
-  modal = {
-      name: '',
-  };
-  private accounts = [];
+  auth = {
+      username: '',
+      password: '',
+  }
 
-  constructor(protected accountService:AccountService, protected modalService: NgbModal) {
+  constructor(protected accountService:AccountService) {
   }
 
   ngOnInit() {
     this._success.subscribe(message => (this.successMessage = message));
     this._success.pipe(debounceTime(3000)).subscribe(() => (this.successMessage = null));
-    this._modal.subscribe(message => (this.modalMessage = message));
-    this._modal.pipe(debounceTime(3000)).subscribe(() => (this.modalMessage = null));
-    this.onSearchClick();
   }
 
-  getModal() {
-      return this.modal; 
-  }
-
-  onSearchClick() : void {
-      this.accountService.queryList(this.search.offset, this.search.count,  (_status, _account, _total)=>{
+  onCreateClick() : void {
+      this.accountService.signup(this.auth.username, this.auth.password,  (_status, _uuid)=>{
           if(0 != _status.code) {
               this._success.next(_status.message);
               return;
           }
-          this._success.next(`获取到${_account.length}条数据`);
-          this.accounts = [];
-          this.search.total = _total;
-          for (var i = 0; i < _account.length; i++) {
-              let account = {
-                  id: i+1,
-                  username: _account[i]['username'],
-                  uuid: _account[i]['uuid'],
-                  createdAt: format(_account[i]['createdAt']*1000, "YYYY-MM-DD HH:mm:ss"),
-                  updatedAt: format(_account[i]['updatedAt']*1000, "YYYY-MM-DD HH:mm:ss"),
-              };
-              this.accounts.push(account);
-          }
-          this.source = new LocalDataSource(this.accounts); 
+          this._success.next(`Success`);
       });
   }
 }
