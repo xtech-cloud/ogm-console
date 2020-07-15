@@ -6,6 +6,12 @@ import { AppConfig } from 'app/_config/app.config'
   providedIn: 'root'
 })
 export class AccountService {
+  private httpOptions = {
+      headers: new HttpHeaders({
+          'Operator-Label': 'admin',
+          'Operator-Type': 'OMO-Console',
+       })
+  };
 
   constructor(private http:HttpClient) { }
 
@@ -22,7 +28,11 @@ export class AccountService {
   }
 
   signup(_username, _password, _onReply) {
-      this.http.get(`${AppConfig.settings.api.msa.account}/Auth/Signup?username="${_username}"&password="${_password}"`).subscribe( (rsp) => {
+      let params = {
+          username: _username,
+          password: _password,
+      };
+      this.http.post(`${AppConfig.settings.api.msa.account}/Auth/Signup`, params, this.httpOptions).subscribe( (rsp) => {
           let status = this.handleReply(rsp);
           let uuid = null == rsp['uuid'] ? "" : rsp['uuid'];
           _onReply(status, uuid);

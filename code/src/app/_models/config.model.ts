@@ -9,6 +9,7 @@ export interface IAppConfig {
             account: string;
             license: string;
             analytics: string;
+            activity: string;
         }
     };
     web: {

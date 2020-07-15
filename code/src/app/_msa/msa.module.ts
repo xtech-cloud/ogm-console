@@ -20,6 +20,10 @@ import { AccountRetrievalComponent } from './account/retrieval.component';
 import { AccountUpdateComponent } from './account/update.component';
 import { AccountCreateComponent } from './account/create.component';
 import { AccountService } from './service/account.service';
+import { ActivityDashboardComponent } from './activity/dashboard.component';
+import { ActivityChannelComponent } from './activity/channel.component';
+import { ActivityRecordComponent } from './activity/record.component';
+import { ActivityService } from './service/activity.service';
 
 @NgModule({
   imports: [
@@ -41,11 +45,15 @@ import { AccountService } from './service/account.service';
     AccountRetrievalComponent,
     AccountUpdateComponent,
     AccountCreateComponent,
+    ActivityDashboardComponent,
+    ActivityChannelComponent,
+    ActivityRecordComponent,
   ],
   providers:[
     LicenseService,
     AnalyticsService,
     AccountService,
+    ActivityService,
   ]
 })
 export class MSAModule {}

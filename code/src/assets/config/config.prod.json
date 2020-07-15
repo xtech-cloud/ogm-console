@@ -10,7 +10,8 @@
         "msa": {
             "account": "http://localhost:8080/msa/account",
             "license": "http://localhost:8080/msa/license",
-            "analytics": "http://localhost:8080/msa/analytics"
+            "analytics": "http://localhost:8080/msa/analytics",
+            "activity": "http://localhost:8080/msa/activity"
         }
     },
     "web" : {

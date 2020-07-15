@@ -45,9 +45,16 @@ export const Style:string =`
 export class AccountUpdateComponent implements OnInit{
   fields = ['username', 'uuid']
   search = { value: "", field: "username"};
+  account = { 
+      username: "",
+      password: "",
+      profile: "", 
+      uuid: "",
+      createdAt:"",
+      updatedAt: "",
+  };
   private _success = new Subject<string>();
   successMessage:string = '';
-  account = {}
 
   constructor(protected accountService:AccountService) {
   }

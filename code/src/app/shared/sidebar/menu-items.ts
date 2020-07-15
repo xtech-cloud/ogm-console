@@ -177,6 +177,37 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '',
+    title: 'Activity',
+    icon: 'mdi mdi-flash',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/msa/activity/channel',
+        title: 'Channel',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/activity/record',
+        title: 'Record',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+    ]
+  },
+  {
+    path: '',
     title: 'Video',
     icon: 'mdi mdi-camcorder-box',
     class: 'has-arrow',

@@ -9,6 +9,9 @@ import { AccountRetrievalComponent } from './account/retrieval.component';
 import { AccountUpdateComponent } from './account/update.component';
 import { AccountCreateComponent } from './account/create.component';
 import { AccountDashboardComponent } from './account/dashboard.component';
+import { ActivityDashboardComponent } from './activity/dashboard.component';
+import { ActivityChannelComponent } from './activity/channel.component';
+import { ActivityRecordComponent} from './activity/record.component';
 
 export const MSARoutes: Routes = [
   {
@@ -110,6 +113,39 @@ export const MSARoutes: Routes = [
           urls: [
             { title: 'Analytics', url: '/analytics' },
             { title: 'Agent' }
+          ]
+        }
+      },
+      {
+        path: 'activity/dashboard',
+        component: ActivityDashboardComponent,
+        data: {
+          title: 'Activity',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'Activity' }
+          ]
+        }
+      },
+      {
+        path: 'activity/channel',
+        component: ActivityChannelComponent,
+        data: {
+          title: 'Activity',
+          urls: [
+            { title: 'Channel', url: '/channel' },
+            { title: 'Activity' }
+          ]
+        }
+      },
+      {
+        path: 'activity/record',
+        component: ActivityRecordComponent,
+        data: {
+          title: 'Activity',
+          urls: [
+            { title: 'Record', url: '/record' },
+            { title: 'Activity' }
           ]
         }
       },
