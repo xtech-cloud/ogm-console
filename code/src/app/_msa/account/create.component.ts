@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbDateStruct, NgbCalendar, NgbDateAdapter, NgbDateNativeAdapter, NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import {Md5} from 'ts-md5/dist/md5';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { subMonths, format } from 'date-fns';
@@ -59,12 +60,26 @@ export class AccountCreateComponent implements OnInit{
   }
 
   onCreateClick() : void {
-      this.accountService.signup(this.auth.username, this.auth.password,  (_status, _uuid)=>{
+      // 第一次反转
+      let pwd = this.reverseString(this.auth.password);
+      // 第一次MD5
+      pwd = Md5.hashStr(pwd).toString().toUpperCase();
+      // 第二次反转
+      pwd = this.reverseString(pwd);
+      // 第二次MD5
+      pwd = Md5.hashStr(pwd).toString().toUpperCase();
+
+      this.accountService.signup(this.auth.username, pwd,  (_status, _uuid)=>{
           if(0 != _status.code) {
               this._success.next(_status.message);
               return;
           }
           this._success.next(`Success`);
       });
+  }
+
+  reverseString(_value) : string {
+      let str = _value.split("").reverse().join("");
+      return str;
   }
 }
