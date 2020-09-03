@@ -248,6 +248,121 @@ export const ROUTES: RouteInfo[] = [
     ]
   },
 
+  {
+    path: '',
+    title: 'Data Storage Center',
+    icon: '',
+    class: 'nav-small-cap',
+    label: '',
+    labelClass: '',
+    extralink: true,
+    submenu: []
+  },
+  {
+    path: '',
+    title: 'MySQL',
+    icon: 'mdi mdi-database',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/dsc/mysql/web',
+        title: 'Web',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
+  {
+    path: '',
+    title: 'MongoDB',
+    icon: 'mdi mdi-database',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/dsc/mongodb/web',
+        title: 'Web',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
+  {
+    path: '',
+    title: 'Redis',
+    icon: 'mdi mdi-database',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/dsc/redis/web',
+        title: 'Web',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
+  {
+    path: '',
+    title: 'DGraph',
+    icon: 'mdi mdi-database',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/dsc/dgraph/web',
+        title: 'Web',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
+  {
+    path: '',
+    title: 'MinIO',
+    icon: 'mdi mdi-database',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/dsc/minio/web',
+        title: 'Web',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      }
+    ]
+  },
 
   {
     path: '',

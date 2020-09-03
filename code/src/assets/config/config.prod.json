@@ -16,7 +16,12 @@
     },
     "web" : {
         "consul": "http://localhost:8500",
-        "micro": "http://localhost:8082"
+        "micro": "http://localhost:8082",
+        "mysql": "http://localhost:3307",
+        "mongodb": "http://localhost:27018",
+        "redis": "http://localhost:6380",
+        "dgraph": "http://localhost:8000",
+        "minio": "http://localhost:9000"
     }
 }
 

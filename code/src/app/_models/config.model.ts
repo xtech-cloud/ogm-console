@@ -15,5 +15,10 @@ export interface IAppConfig {
     web: {
         consul: string;
         micro: string;
+        mysql: string;
+        mongodb: string;
+        redis: string;
+        dgraph: string;
+        minio: string;
     };
 }

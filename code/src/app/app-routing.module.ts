@@ -28,6 +28,10 @@ export const routes: Routes = [
         loadChildren: './_src/src.module#SRCModule'
       },
       {
+        path: 'dsc',
+        loadChildren: './_dsc/dsc.module#DSCModule'
+      },
+      {
         path: 'foundation',
         loadChildren: './_foundation/foundation.module#FoundationModule'
       },
