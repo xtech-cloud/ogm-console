@@ -24,6 +24,9 @@ import { ActivityDashboardComponent } from './activity/dashboard.component';
 import { ActivityChannelComponent } from './activity/channel.component';
 import { ActivityRecordComponent } from './activity/record.component';
 import { ActivityService } from './service/activity.service';
+import { FileBucketComponent } from './file/bucket.component';
+import { FileObjectComponent } from './file/object.component';
+import { FileService } from './service/file.service';
 
 @NgModule({
   imports: [
@@ -48,12 +51,15 @@ import { ActivityService } from './service/activity.service';
     ActivityDashboardComponent,
     ActivityChannelComponent,
     ActivityRecordComponent,
+    FileBucketComponent,
+    FileObjectComponent,
   ],
   providers:[
     LicenseService,
     AnalyticsService,
     AccountService,
     ActivityService,
+    FileService,
   ]
 })
 export class MSAModule {}

@@ -12,6 +12,8 @@ import { AccountDashboardComponent } from './account/dashboard.component';
 import { ActivityDashboardComponent } from './activity/dashboard.component';
 import { ActivityChannelComponent } from './activity/channel.component';
 import { ActivityRecordComponent} from './activity/record.component';
+import { FileBucketComponent} from './file/bucket.component';
+import { FileObjectComponent} from './file/object.component';
 
 export const MSARoutes: Routes = [
   {
@@ -146,6 +148,28 @@ export const MSARoutes: Routes = [
           urls: [
             { title: 'Record', url: '/record' },
             { title: 'Activity' }
+          ]
+        }
+      },
+      {
+        path: 'file/bucket',
+        component: FileBucketComponent,
+        data: {
+          title: 'File',
+          urls: [
+            { title: 'Bucket', url: '/bucket' },
+            { title: 'File' }
+          ]
+        }
+      },
+      {
+        path: 'file/object',
+        component: FileObjectComponent,
+        data: {
+          title: 'File',
+          urls: [
+            { title: 'Object', url: '/object' },
+            { title: 'File' }
           ]
         }
       },

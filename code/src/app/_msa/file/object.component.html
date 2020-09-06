@@ -1,0 +1,139 @@
+<div class="row">
+    <div class="col-12">
+        <ng-template #modalPrepare let-modal>                          
+            <div class="modal-header" >                                 
+                <h4 class="modal-title">Prepare Object</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>             
+                </button>                                               
+            </div>                                                                                       
+            <div class="modal-body">                                                                     
+                <form class="form">                                     
+                    <div class="form-group m-t-40 row">                 
+                        <label class="col-2 col-form-label">Bucket</label>
+                        <div class="col-10">                            
+                            <input class="form-control" type="text" name="bucket" [(ngModel)]="getModal().bucket" #bucket="ngModel">
+                        </div>                                          
+                    </div>                                              
+                    <div class="form-group m-t-40 row">                 
+                        <label class="col-2 col-form-label">Uname</label>
+                        <div class="col-10">                            
+                            <input class="form-control" type="text" name="uname" [(ngModel)]="getModal().uname" #uname="ngModel">
+                        </div>                                          
+                    </div>                                              
+                    <div class="form-group m-t-40 row">                 
+                        <label class="col-2 col-form-label">Size</label>
+                        <div class="col-10">                            
+                            <input class="form-control" type="text" name="size" [(ngModel)]="getModal().size" #size="ngModel">
+                        </div>                                          
+                    </div>                                              
+                    <div class="form-group m-t-40 row">                 
+                        <label class="col-2 col-form-label">Engine</label>
+                        <div class="col-10">                            
+                            <input class="form-control" type="text" name="engine" disabled=true [(ngModel)]="getModal().engine" #engine="ngModel">
+                        </div>                                          
+                    </div>                                              
+                    <div class="form-group m-t-40 row">                 
+                        <label class="col-2 col-form-label">Address</label>
+                        <div class="col-10">                            
+                            <input class="form-control" type="text" name="address" disabled=true [(ngModel)]="getModal().address" #address="ngModel">
+                        </div>                                          
+                    </div>                                              
+                    <div class="form-group m-t-40 row">                 
+                        <label class="col-2 col-form-label">AccessToken</label>
+                        <div class="col-10">                            
+                            <input class="form-control" type="text" name="accessToken" disabled=true [(ngModel)]="getModal().accessToken" #accessToken="ngModel">
+                        </div>                                          
+                    </div>                                              
+                </form>                                                 
+                <ngb-alert *ngIf="modalMessage" type="success" [dismissible]="false">{{ modalMessage }}</ngb-alert>
+             </div>                                                      
+             <div class="modal-footer">                                  
+                <button type="button" class="btn btn-danger" (click)="submitPrepare()">Submit</button>
+            </div>                                                      
+        </ng-template> 
+        <ng-template #modalFlush let-modal>                          
+            <div class="modal-header" >                                 
+                <h4 class="modal-title">Flush Object</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>             
+                </button>                                               
+            </div>                                                                                       
+            <div class="modal-body">                                                                     
+                <form class="form">                                     
+                    <div class="form-group m-t-40 row">                 
+                        <label class="col-2 col-form-label">Bucket</label>
+                        <div class="col-10">                            
+                            <input class="form-control" type="text" name="bucket" [(ngModel)]="getModal().bucket" #bucket="ngModel">
+                        </div>                                          
+                    </div>                                              
+                    <div class="form-group m-t-40 row">                 
+                        <label class="col-2 col-form-label">Uname</label>
+                        <div class="col-10">                            
+                            <input class="form-control" type="text" name="uname" [(ngModel)]="getModal().uname" #uname="ngModel">
+                        </div>                                          
+                    </div>                                              
+                    <div class="form-group m-t-40 row">                 
+                        <label class="col-2 col-form-label">Path</label>
+                        <div class="col-10">                            
+                            <input class="form-control" type="text" name="size" [(ngModel)]="getModal().path" #path="ngModel">
+                        </div>                                          
+                    </div>                                              
+                </form>                                                 
+                <ngb-alert *ngIf="modalMessage" type="success" [dismissible]="false">{{ modalMessage }}</ngb-alert>
+             </div>                                                      
+             <div class="modal-footer">                                  
+                <button type="button" class="btn btn-danger" (click)="submitFlush()">Submit</button>
+            </div>                                                      
+        </ng-template> 
+       
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-subtitle"></h6>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="changeSecondStep">&nbsp;</label>
+                        <button type="button" class="btn btn-block btn-primary" (click)="onPrepareClick(modalPrepare)">Prepare</button>
+                    </div>
+                    <div class="col-md-1">
+                        <label for="changeSecondStep">&nbsp;</label>
+                        <button type="button" class="btn btn-block btn-primary" (click)="onFlushClick(modalFlush)">Flush</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <h6 class="card-subtitle"></h6>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="changeHourStep">Total</label>
+                        <input id="total" name="total" class="form-control" disabled=true [(ngModel)]="search.total" #total="ngModel">
+                    </div>
+                    <div class="col-md-1">
+                        <label for="changeHourStep">Offset</label>
+                        <input id="offset" name="offset" class="form-control" required [(ngModel)]="search.offset" #offset="ngModel">
+                    </div>
+                    <div class="col-md-1">
+                        <label for="changeMinuteStep">Count</label>
+                        <input id="count" name="count" class="form-control" required [(ngModel)]="search.count" #count="ngModel">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="changeMinuteStep">Bucket</label>
+                        <input id="count" name="count" class="form-control" required [(ngModel)]="search.bucket" #count="ngModel">
+                    </div>
+                    <div class="col-md-1">
+                        <label for="changeSecondStep">&nbsp;</label>
+                        <button type="button" class="btn btn-block btn-info" (click)="onSearchClick()">Search</button>
+                    </div>
+                </div>
+				<hr>
+  				<ngb-alert *ngIf="successMessage" type="success" [dismissible]="false">{{ successMessage }}</ngb-alert>	
+                <div class="table table-responsive smart-table">
+                    <ng2-smart-table [settings]="settings" [source]="source" class=""></ng2-smart-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

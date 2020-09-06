@@ -10,6 +10,7 @@ export interface IAppConfig {
             license: string;
             analytics: string;
             activity: string;
+            file: string;
         }
     };
     web: {

@@ -105,6 +105,48 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '',
+    title: 'File',
+    icon: 'mdi mdi-file-cloud',
+    class: 'has-arrow',
+    label: '',
+    labelClass: 'label label-rouded label-themecolor',
+    extralink: false,
+    submenu: [
+      {
+        path: '/msa/file/dashboard',
+        title: 'Dashboard',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/file/bucket',
+        title: 'Bucket',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+      {
+        path: '/msa/file/object',
+        title: 'Object',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+    ]
+  },
+
+  {
+    path: '',
     title: 'License',
     icon: 'mdi mdi-key-variant',
     class: 'has-arrow',
