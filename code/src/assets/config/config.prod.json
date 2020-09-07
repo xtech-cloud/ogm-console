@@ -12,7 +12,8 @@
             "license": "http://localhost:8080/msa/license",
             "analytics": "http://localhost:8080/msa/analytics",
             "activity": "http://localhost:8080/msa/activity",
-            "file": "http://localhost:8080/msa/file"
+            "file": "http://localhost:8080/msa/file",
+            "tag": "http://localhost:8080/msa/tag"
         }
     },
     "web" : {

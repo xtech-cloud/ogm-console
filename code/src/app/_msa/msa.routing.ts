@@ -14,6 +14,7 @@ import { ActivityChannelComponent } from './activity/channel.component';
 import { ActivityRecordComponent} from './activity/record.component';
 import { FileBucketComponent} from './file/bucket.component';
 import { FileObjectComponent} from './file/object.component';
+import { TagCollectionComponent} from './tag/collection.component';
 
 export const MSARoutes: Routes = [
   {
@@ -170,6 +171,17 @@ export const MSARoutes: Routes = [
           urls: [
             { title: 'Object', url: '/object' },
             { title: 'File' }
+          ]
+        }
+      },
+      {
+        path: 'tag/collection',
+        component: TagCollectionComponent,
+        data: {
+          title: 'Tag',
+          urls: [
+            { title: 'Collection', url: '/collection' },
+            { title: 'Tag' }
           ]
         }
       },

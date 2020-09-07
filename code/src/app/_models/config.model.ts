@@ -11,6 +11,7 @@ export interface IAppConfig {
             analytics: string;
             activity: string;
             file: string;
+            tag: string;
         }
     };
     web: {
