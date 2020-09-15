@@ -121,7 +121,11 @@
                     </div>
                     <div class="col-md-4">
                         <label for="changeMinuteStep">Bucket</label>
-                        <input id="count" name="count" class="form-control" required [(ngModel)]="search.bucket" #count="ngModel">
+                        <input id="bucket" name="bucket" class="form-control" required [(ngModel)]="search.bucket" #bucket="ngModel">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="changeMinuteStep">Prefix</label>
+                        <input id="prefix" name="prefix" class="form-control" required [(ngModel)]="search.prefix" #prefix="ngModel">
                     </div>
                     <div class="col-md-1">
                         <label for="changeSecondStep">&nbsp;</label>

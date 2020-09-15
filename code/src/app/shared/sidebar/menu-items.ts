@@ -156,6 +156,7 @@ export const ROUTES: RouteInfo[] = [
             },
         ]
     },
+
     {
         path: '',
         title: 'File',
@@ -188,6 +189,38 @@ export const ROUTES: RouteInfo[] = [
             {
                 path: '/msa/file/object',
                 title: 'Object',
+                icon: '',
+                class: '',
+                label: '',
+                labelClass: '',
+                extralink: false,
+                submenu: []
+            },
+        ]
+    },
+
+    {
+        path: '',
+        title: 'Group',
+        icon: 'mdi mdi-file-cloud',
+        class: 'has-arrow',
+        label: '',
+        labelClass: 'label label-rouded label-themecolor',
+        extralink: false,
+        submenu: [
+            {
+                path: '/msa/group/collection',
+                title: 'Collection',
+                icon: '',
+                class: '',
+                label: '',
+                labelClass: '',
+                extralink: false,
+                submenu: []
+            },
+            {
+                path: '/msa/group/member',
+                title: 'Member',
                 icon: '',
                 class: '',
                 label: '',

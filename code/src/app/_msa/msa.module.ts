@@ -29,6 +29,9 @@ import { FileObjectComponent } from './file/object.component';
 import { FileService } from './service/file.service';
 import { TagCollectionComponent } from './tag/collection.component';
 import { TagService } from './service/tag.service';
+import { GroupCollectionComponent } from './group/collection.component';
+import { GroupMemberComponent } from './group/member.component';
+import { GroupService } from './service/group.service';
 
 @NgModule({
   imports: [
@@ -56,6 +59,8 @@ import { TagService } from './service/tag.service';
     FileBucketComponent,
     FileObjectComponent,
     TagCollectionComponent,
+    GroupCollectionComponent,
+    GroupMemberComponent,
   ],
   providers:[
     LicenseService,
@@ -64,6 +69,7 @@ import { TagService } from './service/tag.service';
     ActivityService,
     FileService,
     TagService,
+    GroupService,
   ]
 })
 export class MSAModule {}

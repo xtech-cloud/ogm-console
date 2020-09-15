@@ -12,6 +12,7 @@ export interface IAppConfig {
             activity: string;
             file: string;
             tag: string;
+            group: string;
         }
     };
     web: {

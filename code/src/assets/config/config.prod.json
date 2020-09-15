@@ -13,7 +13,8 @@
             "analytics": "http://localhost:8080/msa/analytics",
             "activity": "http://localhost:8080/msa/activity",
             "file": "http://localhost:8080/msa/file",
-            "tag": "http://localhost:8080/msa/tag"
+            "tag": "http://localhost:8080/msa/tag",
+            "group": "http://localhost:8080/msa/group"
         }
     },
     "web" : {

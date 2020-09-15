@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-12">
+        <ng-template #modalNew let-modal>                          
+            <div class="modal-header" >                                 
+                <h4 class="modal-title">Create Collection</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>             
+                </button>                                               
+            </div>                                                                                       
+            <div class="modal-body">                                                                     
+                <form class="form">                                     
+                    <div class="form-group m-t-40 row">                 
+                        <label class="col-2 col-form-label">Name</label>
+                        <div class="col-10">                            
+                            <input class="form-control" type="text" name="name" [(ngModel)]="getModal().name" #name="ngModel">
+                        </div>                                          
+                    </div>                                              
+                    <div class="form-group m-t-40 row">                 
+                        <label class="col-2 col-form-label">Capacity</label>
+                        <div class="col-10">                            
+                            <input class="form-control" type="text" name="capacity" [(ngModel)]="getModal().capacity" #capacity="ngModel">
+                        </div>                                          
+                    </div>                                              
+                </form>                                                 
+                <ngb-alert *ngIf="modalMessage" type="success" [dismissible]="false">{{ modalMessage }}</ngb-alert>
+             </div>                                                      
+             <div class="modal-footer">                                  
+                <button type="button" class="btn btn-danger" (click)="submitNew()">Submit</button>
+            </div>                                                      
+        </ng-template> 
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <h6 class="card-subtitle"></h6>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="changeSecondStep">&nbsp;</label>
+                        <button type="button" class="btn btn-block btn-primary" (click)="onNewClick(modalNew)">New</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <h6 class="card-subtitle"></h6>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="changeHourStep">Total</label>
+                        <input id="total" name="total" class="form-control" disabled=true [(ngModel)]="search.total" #total="ngModel">
+                    </div>
+                    <div class="col-md-1">
+                        <label for="changeHourStep">Offset</label>
+                        <input id="offset" name="offset" class="form-control" required [(ngModel)]="search.offset" #offset="ngModel">
+                    </div>
+                    <div class="col-md-1">
+                        <label for="changeMinuteStep">Count</label>
+                        <input id="count" name="count" class="form-control" required [(ngModel)]="search.count" #count="ngModel">
+                    </div>
+                    <div class="col-md-1">
+                        <label for="changeSecondStep">&nbsp;</label>
+                        <button type="button" class="btn btn-block btn-info" (click)="onSearchClick()">Search</button>
+                    </div>
+                </div>
+				<hr>
+  				<ngb-alert *ngIf="successMessage" type="success" [dismissible]="false">{{ successMessage }}</ngb-alert>	
+                <div class="table table-responsive smart-table">
+                    <ng2-smart-table [settings]="settings" [source]="source" class=""></ng2-smart-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

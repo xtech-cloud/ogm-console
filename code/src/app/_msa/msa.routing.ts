@@ -15,6 +15,8 @@ import { ActivityRecordComponent} from './activity/record.component';
 import { FileBucketComponent} from './file/bucket.component';
 import { FileObjectComponent} from './file/object.component';
 import { TagCollectionComponent} from './tag/collection.component';
+import { GroupCollectionComponent} from './group/collection.component';
+import { GroupMemberComponent} from './group/member.component';
 
 export const MSARoutes: Routes = [
   {
@@ -182,6 +184,28 @@ export const MSARoutes: Routes = [
           urls: [
             { title: 'Collection', url: '/collection' },
             { title: 'Tag' }
+          ]
+        }
+      },
+      {
+        path: 'group/collection',
+        component: GroupCollectionComponent,
+        data: {
+          title: 'Group',
+          urls: [
+            { title: 'Collection', url: '/collection' },
+            { title: 'Group' }
+          ]
+        }
+      },
+      {
+        path: 'group/member',
+        component: GroupMemberComponent,
+        data: {
+          title: 'Group',
+          urls: [
+            { title: 'Member', url: '/member' },
+            { title: 'Group' }
           ]
         }
       },
