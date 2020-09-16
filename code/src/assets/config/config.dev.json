@@ -9,12 +9,13 @@
         },
         "msa": {
             "account": "http://localhost:8080/msa/account",
-            "license": "http://localhost:8080/msa/license",
-            "analytics": "http://localhost:8080/msa/analytics",
             "activity": "http://localhost:8080/msa/activity",
+            "approval": "http://localhost:8080/msa/approval",
+            "analytics": "http://localhost:8080/msa/analytics",
             "file": "http://localhost:8080/msa/file",
-            "tag": "http://localhost:8080/msa/tag",
-            "group": "http://localhost:8080/msa/group"
+            "group": "http://localhost:8080/msa/group",
+            "license": "http://localhost:8080/msa/license",
+            "tag": "http://localhost:8080/msa/tag"
         }
     },
     "web" : {

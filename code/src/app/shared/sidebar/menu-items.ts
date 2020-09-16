@@ -159,8 +159,50 @@ export const ROUTES: RouteInfo[] = [
 
     {
         path: '',
+        title: 'Approval',
+        icon: 'mdi mdi-check-circle',
+        class: 'has-arrow',
+        label: '',
+        labelClass: 'label label-rouded label-themecolor',
+        extralink: false,
+        submenu: [
+            {
+                path: '/msa/approval/workflow',
+                title: 'Workflow',
+                icon: '',
+                class: '',
+                label: '',
+                labelClass: '',
+                extralink: false,
+                submenu: []
+            },
+            {
+                path: '/msa/approval/operator',
+                title: 'Operator',
+                icon: '',
+                class: '',
+                label: '',
+                labelClass: '',
+                extralink: false,
+                submenu: []
+            },
+            {
+                path: '/msa/approval/task',
+                title: 'Task',
+                icon: '',
+                class: '',
+                label: '',
+                labelClass: '',
+                extralink: false,
+                submenu: []
+            },
+        ]
+    },
+
+    {
+        path: '',
         title: 'File',
-        icon: 'mdi mdi-file-cloud',
+        icon: 'mdi mdi-file',
         class: 'has-arrow',
         label: '',
         labelClass: 'label label-rouded label-themecolor',
@@ -202,7 +244,7 @@ export const ROUTES: RouteInfo[] = [
     {
         path: '',
         title: 'Group',
-        icon: 'mdi mdi-file-cloud',
+        icon: 'mdi mdi-group',
         class: 'has-arrow',
         label: '',
         labelClass: 'label label-rouded label-themecolor',
@@ -285,7 +327,7 @@ export const ROUTES: RouteInfo[] = [
     {
         path: '',
         title: 'Tag',
-        icon: 'mdi mdi-chart-areaspline',
+        icon: 'mdi mdi-tag',
         class: 'has-arrow',
         label: '',
         labelClass: 'label label-rouded label-themecolor',
@@ -306,7 +348,7 @@ export const ROUTES: RouteInfo[] = [
     {
         path: '',
         title: 'Video',
-        icon: 'mdi mdi-camcorder-box',
+        icon: 'mdi mdi-video',
         class: 'has-arrow',
         label: '',
         labelClass: 'label label-rouded label-themecolor',

@@ -7,12 +7,13 @@ export interface IAppConfig {
         };
         msa: {
             account: string;
-            license: string;
-            analytics: string;
             activity: string;
+            analytics: string;
+            approval: string;
             file: string;
-            tag: string;
             group: string;
+            license: string;
+            tag: string;
         }
     };
     web: {

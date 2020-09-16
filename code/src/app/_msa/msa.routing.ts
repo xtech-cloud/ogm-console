@@ -12,6 +12,9 @@ import { AccountDashboardComponent } from './account/dashboard.component';
 import { ActivityDashboardComponent } from './activity/dashboard.component';
 import { ActivityChannelComponent } from './activity/channel.component';
 import { ActivityRecordComponent} from './activity/record.component';
+import { ApprovalWorkflowComponent} from './approval/workflow.component';
+import { ApprovalOperatorComponent} from './approval/operator.component';
+import { ApprovalTaskComponent} from './approval/task.component';
 import { FileBucketComponent} from './file/bucket.component';
 import { FileObjectComponent} from './file/object.component';
 import { TagCollectionComponent} from './tag/collection.component';
@@ -151,6 +154,39 @@ export const MSARoutes: Routes = [
           urls: [
             { title: 'Record', url: '/record' },
             { title: 'Activity' }
+          ]
+        }
+      },
+      {
+        path: 'approval/workflow',
+        component: ApprovalWorkflowComponent,
+        data: {
+          title: 'Approval',
+          urls: [
+            { title: 'Workflow', url: '/workflow' },
+            { title: 'Approval' }
+          ]
+        }
+      },
+      {
+        path: 'approval/operator',
+        component: ApprovalOperatorComponent,
+        data: {
+          title: 'Approval',
+          urls: [
+            { title: 'Operator', url: '/operator' },
+            { title: 'Approval' }
+          ]
+        }
+      },
+      {
+        path: 'approval/task',
+        component: ApprovalTaskComponent,
+        data: {
+          title: 'Approval',
+          urls: [
+            { title: 'Task', url: '/task' },
+            { title: 'Approval' }
           ]
         }
       },

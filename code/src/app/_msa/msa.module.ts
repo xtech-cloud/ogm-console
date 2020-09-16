@@ -32,6 +32,10 @@ import { TagService } from './service/tag.service';
 import { GroupCollectionComponent } from './group/collection.component';
 import { GroupMemberComponent } from './group/member.component';
 import { GroupService } from './service/group.service';
+import { ApprovalWorkflowComponent } from './approval/workflow.component';
+import { ApprovalOperatorComponent } from './approval/operator.component';
+import { ApprovalTaskComponent } from './approval/task.component';
+import { ApprovalService } from './service/approval.service';
 
 @NgModule({
   imports: [
@@ -61,6 +65,9 @@ import { GroupService } from './service/group.service';
     TagCollectionComponent,
     GroupCollectionComponent,
     GroupMemberComponent,
+    ApprovalWorkflowComponent,
+    ApprovalOperatorComponent,
+    ApprovalTaskComponent,
   ],
   providers:[
     LicenseService,
@@ -70,6 +77,7 @@ import { GroupService } from './service/group.service';
     FileService,
     TagService,
     GroupService,
+    ApprovalService,
   ]
 })
 export class MSAModule {}
