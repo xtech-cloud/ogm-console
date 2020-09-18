@@ -52,10 +52,11 @@ export class FileBucketComponent implements OnInit{
   private _modal = new Subject<string>();
   successMessage:string = '';
   modalMessage:string = '';
+  engines = ['Invalid', 'Local', 'MinIO', 'Qiniu']
   modal = {
       name: '',
       capacity: 0,
-      engine: 0,
+      engine: 'Invalid',
       address: '',
       scope: '',
       accessKey: '',
@@ -111,10 +112,11 @@ export class FileBucketComponent implements OnInit{
   }
 
   submitNew() : void {
+      let engine = this.engines.indexOf(this.modal.engine);
       this.fileService.bucketMake(
           this.modal.name, 
           this.modal.capacity,
-          this.modal.engine, 
+          engine, 
           this.modal.address, 
           this.modal.scope, 
           this.modal.accessKey, 
