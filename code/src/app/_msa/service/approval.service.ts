@@ -91,4 +91,11 @@ export class ApprovalService {
           _onReply(status, null == rsp['entity'] ? [] : rsp['entity'], total);
       });
   }
+  taskSearch(_offset, _count, _workflow, _state, _onReply) {
+      this.http.get(`${AppConfig.settings.api.msa.approval}/task/Search?offset=${_offset}&count=${_count}&workflow="${_workflow}"&state=${_state}`).subscribe( (rsp) => {
+          let status = this.handleReply(rsp);
+          let total = null == rsp['total'] ? 0 : rsp['total'];
+          _onReply(status, null == rsp['entity'] ? [] : rsp['entity'], total);
+      });
+  }
 }

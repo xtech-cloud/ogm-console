@@ -73,14 +73,14 @@ export class ApprovalTaskComponent implements OnInit{
         this._success.pipe(debounceTime(3000)).subscribe(() => (this.successMessage = null));
         this._modal.subscribe(message => (this.modalMessage = message));
         this._modal.pipe(debounceTime(3000)).subscribe(() => (this.modalMessage = null));
-        this.onSearchClick();
+        this.onListClick();
     }
 
     getModal() {
         return this.modal;
     }
 
-    onSearchClick() : void {
+    onListClick() : void {
         let state = this.TaskStatus.indexOf(this.search.state);
         this.approvalService.taskList(this.search.offset, this.search.count, this.search.workflow, state, (_status, _entity, _total)=>{
             if(0 != _status.code) {
@@ -104,6 +104,31 @@ export class ApprovalTaskComponent implements OnInit{
         });
     }
 
+    onSearchClick() : void {
+        let state = this.TaskStatus.indexOf(this.search.state);
+        this.approvalService.taskSearch(this.search.offset, this.search.count, this.search.workflow, state, (_status, _entity, _total)=>{
+            if(0 != _status.code) {
+                this._success.next(_status.message);
+                return;
+            }
+            this._success.next(`获取到${_entity.length}条数据`);
+            this.entities = [];
+            this.search.total = _total;
+            for (var i = 0; i < _entity.length; i++) {
+                let entity = {
+                    id: i+1,
+                    uuid: _entity[i]['uuid'],
+                    subject: _entity[i]['subject'],
+                    body: _entity[i]['body'],
+                    state: _entity[i]['state'],
+                };
+                this.entities.push(entity);
+            }
+            this.source = new LocalDataSource(this.entities);
+        });
+    }
+
+
     openModal(_modal) : void {
         this.modalService.open(_modal, { centered: true, size:'lg' });
     }
@@ -116,7 +141,7 @@ export class ApprovalTaskComponent implements OnInit{
             (_status)=>{
                 if(0 == _status.code) {
                     this._modal.next(`Success`);
-                    this.onSearchClick();
+                    this.onListClick();
                 }else{
                     this._modal.next(_status.message);
                 }
@@ -129,7 +154,7 @@ export class ApprovalTaskComponent implements OnInit{
             this.modal.uuid,
             this.modal.operator,
             (_status) => {
-                this.onSearchClick();
+                this.onListClick();
             }
         );
     }
@@ -139,7 +164,7 @@ export class ApprovalTaskComponent implements OnInit{
             this.modal.uuid,
             this.modal.operator,
             (_status) => {
-                this.onSearchClick();
+                this.onListClick();
             }
         );
     }
