@@ -77,15 +77,38 @@ export class FileObjectComponent implements OnInit{
         this._success.pipe(debounceTime(3000)).subscribe(() => (this.successMessage = null));
         this._modal.subscribe(message => (this.modalMessage = message));
         this._modal.pipe(debounceTime(3000)).subscribe(() => (this.modalMessage = null));
-        this.onSearchClick();
+        this.onListClick();
     }
 
     getModal() {
         return this.modal;
     }
 
+    onListClick() : void {
+        this.fileService.objectList(this.search.offset, this.search.count, this.search.bucket, (_status, _entity, _total)=>{
+            if(0 != _status.code) {
+                this._success.next(_status.message);
+                return;
+            }
+            this._success.next(`获取到${_entity.length}条数据`);
+            this.objects= [];
+            this.search.total = _total;
+            for (var i = 0; i < _entity.length; i++) {
+                let entity = {
+                    id: i+1,
+                    filepath: _entity[i]['filepath'],
+                    md5: _entity[i]['md5'],
+                    size: _entity[i]['size'],
+                    url: _entity[i]['url'],
+                };
+                this.objects.push(entity);
+            }
+            this.source = new LocalDataSource(this.objects);
+        });
+    }
+
     onSearchClick() : void {
-        this.fileService.objectList(this.search.offset, this.search.count, this.search.bucket, this.search.prefix, (_status, _entity, _total)=>{
+        this.fileService.objectSearch(this.search.offset, this.search.count, this.search.bucket, this.search.prefix,(_status, _entity, _total)=>{
             if(0 != _status.code) {
                 this._success.next(_status.message);
                 return;
@@ -129,7 +152,7 @@ export class FileObjectComponent implements OnInit{
                     this.modal.engine = _reply['engine'];
                     this.modal.address = _reply['address'];
                     this.modal.accessToken = _reply['accessToken'];
-                    this.onSearchClick();
+                    this.onListClick();
                 }else{
                     this._modal.next(_status.message);
                 }
@@ -147,7 +170,7 @@ export class FileObjectComponent implements OnInit{
                     this.modal.engine = _reply['engine'];
                     this.modal.address = _reply['address'];
                     this.modal.accessToken = _reply['accessToken'];
-                    this.onSearchClick();
+                    this.onListClick();
                 }else{
                     this._modal.next(_status.message);
                 }

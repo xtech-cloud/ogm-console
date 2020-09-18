@@ -40,6 +40,12 @@ export class FileService {
           _onReply(status, rsp);
       });
   }
+  bucketFind(_bucket, _filepath, _onReply) {
+      this.http.get(`${AppConfig.settings.api.msa.file}/bucket/Find?bucket="${_bucket}"&filepath="${_filepath}"`).subscribe( (rsp) => {
+          let status = this.handleReply(rsp);
+          _onReply(status, rsp);
+      });
+  }
   objectPrepare(_bucket, _uname, _size, _onReply) {
       this.http.get(`${AppConfig.settings.api.msa.file}/object/Prepare?bucket="${_bucket}"&uname="${_uname}"&size="${_size}"`).subscribe( (rsp) => {
           let status = this.handleReply(rsp);
@@ -52,8 +58,15 @@ export class FileService {
           _onReply(status, rsp);
       });
   }
-  objectList(_offset, _count, _bucket, _prefix, _onReply) {
-      this.http.get(`${AppConfig.settings.api.msa.file}/object/List?offset=${_offset}&count=${_count}&bucket="${_bucket}"&prefix="${_prefix}"`).subscribe( (rsp) => {
+  objectList(_offset, _count, _bucket, _onReply) {
+      this.http.get(`${AppConfig.settings.api.msa.file}/object/List?offset=${_offset}&count=${_count}&bucket="${_bucket}"`).subscribe( (rsp) => {
+          let status = this.handleReply(rsp);
+          let total = null == rsp['total'] ? 0 : rsp['total'];
+          _onReply(status, null == rsp['entity'] ? [] : rsp['entity'], total);
+      });
+  }
+  objectSearch(_offset, _count, _bucket, _prefix, _onReply) {
+      this.http.get(`${AppConfig.settings.api.msa.file}/object/Search?offset=${_offset}&count=${_count}&bucket="${_bucket}"&prefix="${_prefix}"`).subscribe( (rsp) => {
           let status = this.handleReply(rsp);
           let total = null == rsp['total'] ? 0 : rsp['total'];
           _onReply(status, null == rsp['entity'] ? [] : rsp['entity'], total);
